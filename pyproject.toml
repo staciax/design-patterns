@@ -1,0 +1,94 @@
+[project]
+name = "design-patterns"
+version = "0.0.1"
+description = "STACiA: Pattern and Software Design"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = ["mypy>=1.15.0,<1.16.0", "ruff>=0.11.4,<0.12.0"]
+
+[tool.uv.workspace]
+members = [
+    "patterns/behavioral/memento",
+    "patterns/mix/command_decorator_strategy",
+]
+
+[tool.mypy]
+strict = true
+python_version = "3.13"
+exclude = [".venv", "patterns/mix"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+exclude = [
+    ".git",
+    ".ruff_cache",
+    '.mypy_cache',
+    ".venv",
+    ".vscode",
+    "patterns/behavioral/memento/main.ipynb",
+]
+
+[tool.ruff.format]
+preview = true
+quote-style = "single"
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint]
+preview = true
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+    "N",  # pep8-naming
+
+    "ANN", # flake8-annotations
+    "A",   # flake8-builtins
+    "ISC", # flake8-implicit-str-concat
+    "Q",   # flake8-quotes
+    "SIM", # flake8-simplify
+    "RSE", # flake8-raise
+    "RET", # flake8-return
+    "TC",  # flake8-type-checking
+    "ARG", # flake8-unused-arguments
+
+    "PGH", # pygrep-hooks
+    "PL",  # pylint
+    "TRY", # tryceratops
+
+    "RUF", # ruff-specific rules
+]
+ignore = [
+    "ANN401",  # any-type
+    "E501",    # line-too-long, handled by black
+    "TRY003",  # raise-vanilla-args
+    "PLR6301", # no-self-use
+    "PLR2004", # magic-value-
+    "SIM105",  # suppressible-exception
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.ruff.lint.flake8-builtins]
+builtins-ignorelist = ["id"]
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "single"
+
+[tool.ruff.lint.flake8-unused-arguments]
+ignore-variadic-names = true
+
+[tool.ruff.lint.per-file-ignores]
+"patterns/creational/builder/main.py" = ["UP032"]
+"patterns/structural/composite/main.py" = ["B027"]
+"patterns/structural/facade/main.py" = ["RUF012"]
+"patterns/mix/command_decorator_composite/main.py" = ["TRY002", "PLR1704"]
+"patterns/mix/command_decorator_strategy/main.py" = ["RET504", "TRY300"]

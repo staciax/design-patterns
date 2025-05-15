@@ -1,0 +1,54 @@
+{
+  // Editor
+  "workbench.editor.customLabels.patterns": {
+    "**/patterns/**/*": "${dirname} - ${filename}.${extname}"
+  },
+
+  // General
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.ruff_cache": true,
+    "**/.mypy_cache": true,
+    "**/.$*.drawio.{bkp,dtmp}": true,
+  },
+
+  // Python
+  "python.analysis.completeFunctionParens": false,
+  "python.analysis.ignore": ["*"], // Disable Pylance
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+      // "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+
+  // Mypy
+  "mypy.enabled": true,
+  "mypy.runUsingActiveInterpreter": true,
+  "mypy.configFile": "./pyproject.toml",
+
+  // Ruff
+  "ruff.configuration": "${workspaceFolder}/.vscode/ruff.toml",
+
+  // Markdown
+  "[markdown]": {
+    "editor.formatOnSave": true
+  },
+
+  // Typescript
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "quickfix.biome": "explicit",
+      "source.organizeImports.biome": "explicit"
+    },
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
+  },
+
+  // Dart
+  "[dart]": {
+    "editor.formatOnSave": true
+  },
+}

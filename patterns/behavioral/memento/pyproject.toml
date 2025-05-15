@@ -1,0 +1,13 @@
+[project]
+name = "design-patterns.memento"
+version = "0.0.1"
+requires-python = ">=3.13"
+dependencies = [
+    "matplotlib>=3.10.0,<4.0",
+    "pillow>=11.0.0,<12.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]

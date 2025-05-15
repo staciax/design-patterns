@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+
+# Virtual environments
+.venv
+.env
+
+# Diagram
+*.drawio
+.$*.drawio.bkp
+.$*.drawio.dtmp
+*.excalidraw
+
+# MacOS
+.DS_store
+
+# dependencies
+node_modules/
+
+# Log
+*.log

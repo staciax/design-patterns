@@ -1,0 +1,4 @@
+[project]
+name = "adapter toml"
+description = "toml adapter"
+version = "1.0.0"

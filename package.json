@@ -1,0 +1,7 @@
+{
+  "name": "design-patterns",
+  "devDependencies": {
+    "@biomejs/biome": "~1.9.4",
+    "@types/bun": "~1.2.13"
+  }
+}

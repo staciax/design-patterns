@@ -1,0 +1,29 @@
+{
+  // See http://go.microsoft.com/fwlink/?LinkId=827846
+  // for the documentation about the extensions.json format
+  "recommendations": [
+    // Python
+    "ms-python.python",
+    "charliermarsh.ruff",
+    "matangover.mypy",
+
+    // TypeScript
+    "biomejs.biome",
+    "yoavbls.pretty-ts-errors",
+
+    // Dart
+    "dart-code.dart-code",
+    
+    // Flutter
+    // - patterns/structural/flyweight/flyweight_app
+    // "dart-code.flutter", 
+
+    // Diagram
+    // "hediet.vscode-drawio",
+    // "pomdtr.excalidraw-editor",
+
+    // Other
+    "redhat.vscode-yaml",
+    "tamasfe.even-better-toml"
+  ]
+}

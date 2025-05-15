@@ -1,0 +1,79 @@
+{
+    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "useIgnoreFile": false,
+        "defaultBranch": "master"
+    },
+    "files": {
+        "ignoreUnknown": false,
+        "include": ["*.ts", "*.tsx", "*.json"],
+        "ignore": ["node_modules", "dist/**", "public"]
+    },
+    "formatter": {
+        "enabled": true,
+        "formatWithErrors": false,
+        "attributePosition": "auto",
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 80,
+        "lineEnding": "lf"
+    },
+    "organizeImports": {
+        "enabled": true
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "correctness": {
+                "noUnusedVariables": {
+                    "fix": "none",
+                    "level": "warn"
+                },
+                "noUnusedImports": {
+                    "fix": "none",
+                    "level": "warn"
+                }
+            },
+            "style": {
+                "useConst": {
+                    "level": "warn",
+                    "fix": "none"
+                },
+                "useExportType": "warn",
+                "useImportType": "warn",
+                "useThrowOnlyError": "error"
+            },
+            "complexity": {
+                "noBannedTypes": "error",
+                "noUselessEmptyExport": "warn",
+                "useOptionalChain": "warn"
+            },
+            "suspicious": {
+                "noEmptyInterface": "warn",
+                "noExplicitAny": "off"
+            },
+            "performance": {
+                "noAccumulatingSpread": "error"
+            }
+        }
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "single",
+            "arrowParentheses": "always",
+            "bracketSameLine": false,
+            "bracketSpacing": true,
+            "jsxQuoteStyle": "double",
+            "quoteProperties": "asNeeded",
+            "trailingCommas": "all"
+        }
+    },
+    "json": {
+        "formatter": {
+            "trailingCommas": "none"
+        }
+    }
+}
