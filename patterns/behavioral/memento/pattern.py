@@ -11,11 +11,7 @@ from PIL import Image, ImageFilter
 
 class Memento(ABC):
     @abstractmethod
-    def get_image(self) -> Image.Image: ...
-
-    @property
-    @abstractmethod
-    def saved_at(self) -> datetime: ...
+    def restore(self) -> Any: ...
 
 
 class ImageMemento(Memento):
@@ -25,14 +21,16 @@ class ImageMemento(Memento):
         self.image_data.seek(0)
         self._saved_at = datetime.now()
 
-    @override
-    def get_image(self) -> Image.Image:
-        return Image.open(io.BytesIO(self.image_data.getvalue()))
+    def __repr__(self) -> str:
+        return f'<{self.__class__.__name__} saved_at={self.saved_at.strftime("%Y-%m-%d %H:%M:%S")!r}>'
 
     @property
-    @override
     def saved_at(self) -> datetime:
         return self._saved_at
+
+    @override
+    def restore(self) -> Image.Image:
+        return Image.open(io.BytesIO(self.image_data.getvalue()))
 
 
 class Caretaker:
@@ -50,9 +48,6 @@ class Caretaker:
             return
 
         memento = self._mementos.pop()
-        print(
-            f'Caretaker: restoring state to: {memento.get_image()} saved_at: {memento.saved_at.strftime("%Y-%m-%d %H:%M:%S")}'
-        )
         try:
             self._originator.restore(memento)
         except Exception:
@@ -61,7 +56,7 @@ class Caretaker:
     def show_history(self) -> None:
         print("Caretaker: Here's the list of mementos:")
         for memento in self._mementos:
-            print(memento, f'saved_at: {memento.saved_at.strftime("%Y-%m-%d %H:%M:%S")}')
+            print(memento)
 
 
 class Originator(ABC):
@@ -83,7 +78,7 @@ class ImageEditor(Originator):
 
     @override
     def restore(self, memento: Memento) -> None:
-        self.image = memento.get_image()  # type: ignore[assignment]
+        self.image = memento.restore()
 
     def add_filter(self, pil_filter: ImageFilter) -> None:  # type: ignore[valid-type]
         self.image = self.image.filter(pil_filter)  # type: ignore[assignment]
