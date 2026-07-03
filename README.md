@@ -1,13 +1,8 @@
 ## Design Patterns
 
-This repository contains my assignments for the "Pattern and Software Design" course. It includes implementations of design patterns with code examples to demonstrate my understanding of software design concepts.
+Course assignments and implementations for Pattern and Software Design.
 
-> [!NOTE]
-> The documentation for each pattern is not yet complete. I will write it later.
-
-### Creational Patterns
-
-Creational design patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code.
+### Creational
 
 - [Factory Method](/patterns/creational/factory_method/)
 - [Abstract Factory](/patterns/creational/abstract_factory/)
@@ -15,9 +10,7 @@ Creational design patterns provide various object creation mechanisms, which inc
 - [Prototype](/patterns/creational/prototype/)
 - [Singleton](/patterns/creational/singleton/)
 
-### Structural Patterns
-
-Structural design patterns explain how to assemble objects and classes into larger structures, while keeping these structures flexible and efficient.
+### Structural
 
 - [Adapter](/patterns/structural/adapter/)
 - [Bridge](/patterns/structural/bridge/)
@@ -27,9 +20,7 @@ Structural design patterns explain how to assemble objects and classes into larg
 - [Flyweight](/patterns/structural/flyweight/)
 - [Proxy](/patterns/structural/proxy/)
 
-### Behavioral Patterns
-
-Behavioral design patterns are concerned with algorithms and the assignment of responsibilities between objects.
+### Behavioral
 
 - [Chain of Responsibility](/patterns/behavioral/chain_of_responsibility/)
 - [Command](/patterns/behavioral/command/)
@@ -44,27 +35,23 @@ Behavioral design patterns are concerned with algorithms and the assignment of r
 
 ### Project
 
-For my final project, I created an application that integrates multiple design patterns:
-
 - [Mix Patterns](/patterns/mix/)
 
-### Reference
-
-- [Refactoring Guru](https://refactoring.guru/design-patterns)
-
-### Development
+### Setup
 
 - [Python](https://www.python.org) 3.13+
 - [Bun](https://bun.sh) 1.2+
 - [Dart](https://dart.dev/get-dart) 3.7.2+
-- [Flutter](https://flutter.dev) 3.29.2+ (for flyweight app)
-
-#### Installation
+- [Flutter](https://flutter.dev) 3.29.2+ (for [flyweight](/patterns/structural/flyweight/))
 
 ```bash
-# python
+# Python
 uv sync --all-packages
 
-# typescript
+# TypeScript
 bun install
 ```
+
+### Reference
+
+- [Refactoring Guru](https://refactoring.guru/design-patterns)
