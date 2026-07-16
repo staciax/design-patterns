@@ -1,6 +1,6 @@
 ## Design Patterns
 
-Course assignments and implementations for Pattern and Software Design.
+A collection of coursework exploring design patterns through assignments and projects focused on software design principles.
 
 ### Creational
 
