@@ -17,7 +17,7 @@ class File extends FileSystemProtoype {
   File(String name, this.size) : super(name);
 
   @override
-  File clone() {
+  FileSystemProtoype clone() {
     return File(name, size);
   }
 
@@ -37,7 +37,7 @@ class Directory extends FileSystemProtoype {
   }
 
   @override
-  Directory clone() {
+  FileSystemProtoype clone() {
     return Directory(name, children.map((child) => child.clone()).toList());
   }
 
